@@ -12,6 +12,10 @@ public class Ouvrier {
         this.lesRessources = new HashMap<>();
     }
 
+    public String getNom() {
+        return nom;
+    }
+
     public void ajouterRessource(Ressource r, int quantite) {
         this.lesRessources.put(r, quantite);
     }
@@ -27,7 +31,6 @@ public class Ouvrier {
     public int quantiteByRessource(Ressource r) {
         int quantiteBase = lesRessources.getOrDefault(r, 0);
 
-        // Prise en compte du bonus de l'outil s'il correspond à la ressource demandée
         if (lOutil != null && lOutil.getLaRessource().equals(r)) {
             quantiteBase += lOutil.getQuantite();
         }
