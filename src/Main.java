@@ -12,36 +12,34 @@ public class Main {
 
         Ouvrier manoeuvre1 = new Ouvrier("Manœuvre 1");
         manoeuvre1.setLaCategorie(catManoeuvre);
-        manoeuvre1.ajouterRessource(pierre, 1);
+        manoeuvre1.ajouterRessource(savoir, 1);
         manoeuvre1.ajouterRessource(tuile, 1);
-
-        Ouvrier manoeuvre2 = new Ouvrier("Manœuvre 2");
-        manoeuvre2.setLaCategorie(catManoeuvre);
-        manoeuvre2.ajouterRessource(savoir, 1);
-        manoeuvre2.ajouterRessource(tuile, 1);
 
         Ouvrier maitre1 = new Ouvrier("Maître 1");
         maitre1.setLaCategorie(catMaitre);
         maitre1.ajouterRessource(pierre, 1);
-        maitre1.ajouterRessource(savoir, 2);
+        maitre1.ajouterRessource(savoir, 1);
+        maitre1.ajouterRessource(tuile, 2);
 
         Ouvrier compagnon1 = new Ouvrier("Compagnon 1");
         compagnon1.setLaCategorie(catCompagnon);
         compagnon1.ajouterRessource(pierre, 1);
-        compagnon1.ajouterRessource(tuile, 3);
+        compagnon1.ajouterRessource(tuile, 2);
+
+        Ouvrier compagnon2 = new Ouvrier("Compagnon 2");
+        compagnon2.setLaCategorie(catCompagnon);
+        compagnon2.ajouterRessource(bois, 1);
+        compagnon2.ajouterRessource(tuile, 3);
 
         Batiment ziggourat = new Batiment("La Ziggourat", 5, 14);
         ziggourat.ajouterRessource(savoir, 2);
         ziggourat.ajouterRessource(tuile, 3);
 
-        Batiment carriere = new Batiment("La Carrière", 0, 10);
-        carriere.ajouterRessource(savoir, 1);
-
         System.out.println("--- Début de la partie ---");
         Chantier chantier = new Chantier(ziggourat);
         System.out.println("Ouverture du chantier : " + ziggourat.getLibelle());
 
-        Ouvrier[] equipe = {manoeuvre1, manoeuvre2, maitre1, compagnon1};
+        Ouvrier[] equipe = {manoeuvre1, maitre1, compagnon1, compagnon2};
         int coutTotal = 0;
 
         for (Ouvrier ouvrier : equipe) {
