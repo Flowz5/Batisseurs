@@ -34,28 +34,5 @@ public class Main {
         Batiment ziggourat = new Batiment("La Ziggourat", 5, 14);
         ziggourat.ajouterRessource(savoir, 2);
         ziggourat.ajouterRessource(tuile, 3);
-
-        System.out.println("--- Début de la partie ---");
-        Chantier chantier = new Chantier(ziggourat);
-        System.out.println("Ouverture du chantier : " + ziggourat.getLibelle());
-
-        Ouvrier[] equipe = {manoeuvre1, maitre1, compagnon1, compagnon2};
-        int coutTotal = 0;
-
-        for (Ouvrier ouvrier : equipe) {
-            if (!chantier.estTermine()) {
-                System.out.println("\nEnvoi de l'ouvrier " + ouvrier.getNom() + " sur le chantier.");
-                chantier.envoyerTravaillerOuvrier(ouvrier);
-                coutTotal += ouvrier.cout();
-
-                if (chantier.estTermine()) {
-                    System.out.println("Victoire ! Le bâtiment " + ziggourat.getLibelle() + " est achevé.");
-                    System.out.println("L'investissement total en salaires s'élève à " + coutTotal + " sesterces.");
-                    break;
-                } else {
-                    System.out.println("Le chantier progresse, mais il manque encore des ressources. On continue.");
-                }
-            }
-        }
     }
 }
