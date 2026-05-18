@@ -14,6 +14,10 @@ public class Batiment {
         this.lesMateriaux = new HashMap<>();
     }
 
+    public int getPointsVictoire() {
+        return pointsVictoire;
+    }
+
     public void ajouterRessource(Ressource r, int quantite) {
         this.lesMateriaux.put(r, quantite);
     }
